@@ -3,152 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taze Yaban Mersini Satışı | Doğal ve Lezzetli Blueberry</title>
-    <meta name="description" content="En taze, dalından yeni koparılmış yaban mersini (blueberry) uygun fiyatlarla kapınızda. Hemen sipariş verin!">
+    <title>Bursa Mavisi | Taze, Organik Bursa Yaban Mersini (Blueberry)</title>
+    <meta name="description" content="Bursa'nın bereketli topraklarından, dalından taze toplanmış organik yaban mersini (blueberry). Farklı çeşitler, yüksek antioksidan deposu. Hemen WhatsApp'tan sipariş verin!">
+    <meta name="keywords" content="yaban mersini bursa, taze blueberry, organik yaban mersini sipariş, bursa mavisi yaban mersini, dukes yaban mersini bursa">
     
     <style>
         :root {
-            --primary: #3b5998;
-            --secondary: #1e3799;
-            --light: #f1f2f6;
+            /* Daha canlı, yaban mersini renklerine uygun bir palet */
+            --primary: #1e3799; /* Derin Mavi - Başlıklar */
+            --secondary: #3b5998; /* Orta Mavi - Arka planlar */
+            --accent: #27ae60; /* Yeşil - Fiyat ve Buton Canlılığı */
+            --bg-light: #f4f7f6; /* Hafif Gri/Mavi - Arka Plan */
+            --text-dark: #2c3e50; /* Koyu Lacivert/Siyah - Ana Metin */
+            --text-light: #ffffff; /* Beyaz - Header Metinleri */
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Daha modern bir yazı tipi */
             margin: 0;
-            background-color: var(--light);
-            color: #333;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
+        /* Üst Bilgi Alanı (Header) */
         header {
             background-color: var(--primary);
-            color: white;
-            padding: 2rem;
+            background-image: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--text-light);
+            padding: 3rem 1rem;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light); /* Önceki sorundaki okunma sorunu çözüldü */
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
 
-        .product-card {
+        /* Bölüm Başlıkları */
+        h2.section-title {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2.section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- Ana Ürün Tanıtımı --- */
+        .hero-product {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
             display: flex;
             flex-wrap: wrap;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
         }
 
-        .product-image {
+        .hero-image {
             flex: 1;
-            min-width: 300px;
-            background: #d1d8e0;
+            min-width: 350px;
+            background-color: #d1d8e0;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 300px;
+            min-height: 350px;
         }
 
-        /* Temsili görsel alanı */
-        .product-image::after {
+        /* Placeholder Yerine Yaban Mersini Emojisi (Resim ekleyene kadar) */
+        .hero-image::after {
             content: '🫐';
-            font-size: 100px;
+            font-size: 150px;
         }
 
-        .product-info {
+        .hero-info {
             flex: 1;
-            padding: 2rem;
-            min-width: 300px;
+            padding: 2.5rem;
+            min-width: 350px;
         }
 
-        h1 { margin-top: 0; color: var(--secondary); }
+        .hero-info h2 { color: var(--secondary); margin-top: 0; }
 
-        .price {
-            font-size: 1.5rem;
+        .price-tag {
+            font-size: 2rem;
             font-weight: bold;
-            color: #27ae60;
+            color: var(--accent);
             margin: 1rem 0;
         }
 
         .features {
             list-style: none;
             padding: 0;
+            margin: 1.5rem 0;
         }
 
         .features li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
+            font-size: 1.1rem;
         }
 
         .features li::before {
-            content: '✓';
-            color: green;
-            margin-right: 10px;
+            content: 'H'; /* Yaban mersini yaprağına benzer simge */
+            color: var(--accent);
+            margin-right: 12px;
             font-weight: bold;
+            font-family: serif;
         }
 
-        .buy-btn {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
+        /* --- Yaban Mersini Çeşitleri Paneli --- */
+        .variety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .variety-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
             transition: transform 0.2s;
-            margin-top: 1rem;
         }
 
-        .buy-btn:hover {
-            transform: scale(1.05);
-            background: #0a3d62;
+        .variety-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .variety-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .variety-card p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* --- Faydalar Bölümü --- */
+        .benefits {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .benefit-item {
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #e0e6e5;
+        }
+
+        .benefit-item i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* WhatsApp Butonu - Numaran Entegre */
+        .whatsapp-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 2rem auto;
+            background-color: #25D366; /* WhatsApp Yeşili */
+            color: white;
+            padding: 1.2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebd5a;
+            transform: scale(1.03);
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #666;
+            padding: 3rem 1rem;
+            background-color: var(--primary);
+            color: var(--text-light);
+            margin-top: auto;
+        }
+
+        /* Mobilde Header Yazısını Küçültme */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .hero-info, .hero-image { min-width: 100%; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Doğadan Sofranıza Yaban Mersini</h1>
-    <p>Taze, Organik ve Sağlıklı Atıştırmalık</p>
+    <h1>Bursa Mavisi</h1>
+    <p>Bursa'nın Kalbinden Dalından Taze Yaban Mersini (Blueberry)</p>
 </header>
 
 <div class="container">
-    <div class="product-card">
-        <div class="product-image">
+    
+    <div class="hero-product">
+        <div class="hero-image">
             </div>
-        <div class="product-info">
-            <h2>Süper Taze Yaban Mersini (500g)</h2>
-            <p>Antikoksidan deposu, her sabah taze toplanan meyvelerimizle sağlığınıza değer katın.</p>
+        <div class="hero-info">
+            <h2>Premium Organik Yaban Mersini (500g)</h2>
+            <p>Bursa'nın bereketli topraklarında, kimyasal ilaç kullanılmadan özenle yetiştirilen, her sabah taze taze toplanan 'Süper Meyve'mizle sağlığınıza değer katın.</p>
             
             <ul class="features">
-                <li>%100 Organik Üretim</li>
-                <li>İlaçsız Tarım</li>
-                <li>Hızlı Teslimat</li>
-                <li>Yüksek Vitamin Değeri</li>
+                <li>%100 Organik Üretim (Sertifikalı)</li>
+                <li>Günlük, Dalından Taze Toplama</li>
+                <li>İlaçsız, Doğal Tarım Yöntemleri</li>
+                <li>Maksimum Antioksidan ve Vitamin Deposu</li>
             </ul>
 
-            <div class="price">120.00 TL</div>
+            <div class="price-tag">150.00 TL</div>
             
-            <a href="https://wa.me/905XXXXXXXXX" class="buy-btn">WhatsApp'tan Sipariş Ver</a>
+            <p style="font-size: 0.9rem; color: #666;">*Bursa içi aynı gün hızlı teslimat seçeneği.*</p>
         </div>
     </div>
-</div>
 
-<footer>
-    <p>&copy; 2026 Yaban Mersini Dünyası. Tüm hakları saklıdır.</p>
-</footer>
+    <h2 class="section-title">Yaban Mersini Çeşitlerimiz</h2>
+    <p style="text-align:center; margin-bottom:2rem;">Farklı aromalar ve hasat dönemleriyle size en uygun maviyi seçin:</p>
+    <div class="variety-grid">
+        
+        <div class="variety-card">
+            <h3><span>🫐</span> Duke</h3>
+            <p><strong>Dönem:</strong> Erken Hasat (Haziran)</p>
+            <p>En popüler çeşitlerden biridir. Orta-büyük boyda, tatlı ve hafif mayhoş dengeli bir aromaya sahiptir. Sert yapısıyla nakliyeye dayanıklıdır.</p>
+        </div>
 
-</body>
-</html>
+        <div class="variety-card">
+            <h3><span>🫐</span> Bluecrop</h3>
+            <p><strong>Dönem:</strong> Orta Hasat (Temmuz)</p>
+            <p>Dünyada en çok yetiştirilen çeşittir. Çok büyük meyveli, klasik yaban mersini lezzetini tam yansıtan, aromatik ve tatlıdır.</p>
+        </div>
+
+        <div class="variety-card">
+            <h3><span>🫐</span> Elliot</h3>
+            <p><strong>Dönem:</strong> Geç Hasat (Ağustos-Eylül)</p>
+            <p>Mavinin en geç gelen hali. Hafif ekşimsi, keskin bir tadı vardır. Hasat sezonunu uzatmak isteyenler ve mayhoş tat sevenler için idealdir.</p>
+        </div>
+
+    </div>
+
+    <div class="benefits">
+        <h2 class="section-title">Neden Yaban Mersini Tüketmelisiniz?</h2>
+        <div class="benefits-list">
+            <div class="benefit-item">
+                <i>❤️</i>
+                <strong>Kalp Sağlığı</strong>
+                <p>Kan basıncını dengelemeye yardımcı olur.</p>
+            </div>
+            <div class="benefit-item">
+                <i>🧠</i>
+                <strong>Beyin Fonksiyonu</strong>
+                <p>Hafızayı güçlendirir, odaklanmayı artırır.</p>
+            </div>
+            <div class="benefit-item">
+                <i>✨</i>
+                <strong>Antioksidan Deposu</strong>
+                <p>Vücudu serbest radikallere karşı korur.</p>
+            </div>
+            <div class="benefit-item">
+                <i>👀</i>
+                <strong>Göz Sağlığı</strong>
+                <p>Görüş keskinliğini destekler.</p>
+            </div>
+        </div>
+    </div>
+
+    
