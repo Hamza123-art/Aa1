@@ -6,9 +6,8 @@
     <meta name="google-site-verification" content="google5fc224fd9e277793" />
     
     <title>Bursa Mavisi | Organik Mavi Yemiş ve Yaban Mersini Satışı</title>
-    <meta name="description" content="Bursa Uludağ eteklerinde 1000 rakımda yetişen organik mavi yemiş (blueberry). Legacy, Duke, Chandler ve daha fazlası. Hemen sipariş verin!">
-    <meta name="keywords" content="Yaban mersini, mavi yemiş, bursa yaban mersini, bursa mavi yemiş, blueberry, bursa blueberry, gürsu yaban mersini, orhaneli yaban mersini">
-
+    <meta name="description" content="Bursa Uludağ eteklerinde 1000 rakımda yetişen organik mavi yemiş (blueberry). Legacy, Duke, Chandler ve daha fazlası.">
+    
     <style>
         :root {
             --mavi: #1a2a6c;
@@ -18,103 +17,122 @@
             --beyaz: #ffffff;
         }
 
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--gri); color: #333; line-height: 1.6; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--gri); color: #333; line-height: 1.6; scroll-behavior: smooth; }
 
-        /* Giriş Bölümü */
+        /* Hero / Giriş Alanı */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('resim1.jpg');
+            background-size: cover; background-position: center;
+            color: white; padding: 120px 20px; text-align: center;
         }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
-        .hero p { max-width: 800px; margin: 0 auto; font-size: 1.2rem; }
+        .hero h1 { font-size: 3.5rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .hero p { max-width: 800px; margin: 20px auto; font-size: 1.3rem; font-weight: 300; }
 
-        .container { max-width: 1000px; margin: -50px auto 50px; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .container { max-width: 1100px; margin: -60px auto 60px; background: white; padding: 40px; border-radius: 30px; box-shadow: 0 15px 50px rgba(0,0,0,0.1); }
 
-        h2 { color: var(--mavi); border-bottom: 2px solid var(--yesil); padding-bottom: 10px; margin-top: 40px; }
+        h2 { color: var(--mavi); border-left: 5px solid var(--yesil); padding-left: 15px; margin-top: 50px; }
+
+        /* Video Bölümü */
+        .video-container { width: 100%; border-radius: 20px; overflow: hidden; margin: 30px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.2); background: #000; }
+        video { width: 100%; display: block; }
+
+        /* Foto Galeri Grid */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
+        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; transition: 0.3s; cursor: pointer; }
+        .gallery img:hover { transform: scale(1.03); filter: brightness(1.1); }
 
         /* Çeşitler Kart Yapısı */
-        .variety-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
-        .variety-card { background: #f9f9f9; padding: 20px; border-radius: 15px; border-left: 5px solid var(--mavi); }
-        .variety-card h3 { color: var(--mavi); margin-top: 0; }
+        .variety-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 25px; }
+        .variety-card { background: #fdfdfd; padding: 25px; border-radius: 20px; border: 1px solid #eee; transition: 0.3s; }
+        .variety-card:hover { border-color: var(--mavi); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .variety-card h3 { color: var(--mavi); margin-top: 0; display: flex; align-items: center; gap: 8px; }
 
-        /* Besin Değerleri Tablosu */
-        .stats { background: var(--mavi); color: white; padding: 25px; border-radius: 15px; margin: 30px 0; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; text-align: center; }
+        /* Besin Değerleri */
+        .stats { background: linear-gradient(135deg, var(--mavi), var(--acik-mavi)); color: white; padding: 35px; border-radius: 25px; margin: 40px 0; text-align: center; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 20px; }
+        .stat-item b { font-size: 1.8rem; display: block; color: var(--yesil); }
 
-        /* Butonlar */
-        .btn { display: inline-block; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; margin: 10px; }
-        .btn-whatsapp { background: #25D366; color: white; }
-        .btn-whatsapp:hover { transform: scale(1.05); background: #1ebd5a; }
+        /* WhatsApp Butonu */
+        .btn-whatsapp { 
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            background: #25D366; color: white; padding: 20px; border-radius: 50px; 
+            text-decoration: none; font-weight: bold; font-size: 1.2rem; margin: 40px auto; 
+            max-width: 400px; transition: 0.3s; box-shadow: 0 10px 20px rgba(37,211,102,0.3);
+        }
+        .btn-whatsapp:hover { background: #1ebd5a; transform: translateY(-3px); }
 
-        footer { background: var(--mavi); color: white; text-align: center; padding: 50px 20px; }
-        .contact-info { margin-top: 20px; opacity: 0.9; }
+        footer { background: var(--mavi); color: white; text-align: center; padding: 60px 20px; }
+        .contact-box { margin-bottom: 30px; opacity: 0.9; }
 
-        @media (max-width: 600px) { .hero h1 { font-size: 2rem; } .container { padding: 20px; } }
+        @media (max-width: 600px) { .hero h1 { font-size: 2.2rem; } .container { padding: 25px; margin-top: -30px; } }
     </style>
 </head>
 <body>
 
 <section class="hero">
-    <h1>Hoş Geldin</h1>
-    <p>İngilizcesi Bluebery, Ülkemizde Yaban Mersini olarak bilinen, yeni ismi <strong>Mavi Yemiş</strong> olarak tescillenen bu kıymetli meyveyi Bursa Uludağ'da 1000 rakımda organik olarak yetiştirmekteyiz. Her ile kargo imkanıyla!</p>
+    <h1>Bursa Mavisi</h1>
+    <p>Uludağ'ın 1000 rakımlı tertemiz havasında yetişen, doğanın en güçlü antioksidanı ile tanışın.</p>
 </section>
 
 <div class="container">
+    <h2>Tanıtım Videomuz</h2>
+    <div class="video-container">
+        <video controls poster="resim2.jpg">
+            <source src="video1.mp4" type="video/mp4">
+            Tarayıcınız video etiketini desteklemiyor.
+        </video>
+    </div>
+
     <h2>Mavi Yemiş Şifa Deposu</h2>
-    <p>Mavi yemiş, antioksidan bakımından çok zengin bir meyvedir. Araştırmalar; kalp sağlığı, kanser, kolesterol, tansiyon ve şeker hastalıklarına karşı destekleyici olduğunu, göz sağlığını koruduğunu kanıtlamıştır.</p>
-    
-    <a href="https://wa.me/905313273886" class="btn btn-whatsapp">Hemen Sipariş Ver</a>
+    <p>İngilizcesi <b>Blueberry</b> olan bu meyve, kalpten göz sağlığına, şekerden kolesterole kadar birçok derde devadır. Bursa/Orhaneli ve Gürsu bölgelerindeki bahçelerimizde tamamen organik olarak yetiştirilmektedir.</p>
 
-    <h2>Mavi Yemiş Çeşitlerimiz</h2>
+    <h2>Fotoğraf Galerisi</h2>
+    <div class="gallery">
+        <img src="resim1.jpg" alt="Bursa Mavisi 1">
+        <img src="resim2.jpg" alt="Bursa Mavisi 2">
+        <img src="resim3.jpg" alt="Bursa Mavisi 3">
+        <img src="resim4.jpg" alt="Bursa Mavisi 4">
+        <img src="resim5.jpg" alt="Bursa Mavisi 5">
+        <img src="resim6.jpg" alt="Bursa Mavisi 6">
+        <img src="resim7.jpg" alt="Bursa Mavisi 7">
+        <img src="resim8.jpg" alt="Bursa Mavisi 8">
+        <img src="resim9.jpg" alt="Bursa Mavisi 9">
+        <img src="resim10.jpg" alt="Bursa Mavisi 10">
+    </div>
+
+    <h2>Çeşitlerimiz</h2>
     <div class="variety-grid">
-        <div class="variety-card">
-            <h3>Legacy</h3>
-            <p>Meyve iriliği orta-iridir. Soluk mavi, pürüzsüz ve lezzetlidir. Farklı iklimlere adaptasyonu yüksektir.</p>
-        </div>
-        <div class="variety-card">
-            <h3>Duke</h3>
-            <p>İlkbahar donlarından etkilenmez. Meyve rengi açık mavi ve orta tattadır. Kalitesi çok yüksektir.</p>
-        </div>
-        <div class="variety-card">
-            <h3>Chandler</h3>
-            <p>Meyveleri en iri olan çeşittir. Parlak mavi rengi ve mükemmel tadıyla uzun bir hasat dönemi sunar.</p>
-        </div>
-        <div class="variety-card">
-            <h3>Patriot</h3>
-            <p>Kış soğuklarına en dayanıklı çeşittir. Meyveleri oldukça iri, tatlı ve dayanıklıdır.</p>
-        </div>
-        <div class="variety-card">
-            <h3>Bluecrop</h3>
-            <p>Dünyada en çok tercih edilen, hastalıklara dayanıklı ve verimli bir çeşittir.</p>
+        <div class="variety-card"><h3>🫐 Legacy</h3><p>Lezzeti ve kalitesiyle ön plana çıkan, pürüzsüz ve sert yapılı bir çeşittir.</p></div>
+        <div class="variety-card"><h3>🫐 Duke</h3><p>Erken çiçek açan, açık mavi renkli ve çok yüksek kaliteli meyveler verir.</p></div>
+        <div class="variety-card"><h3>🫐 Chandler</h3><p>En iri meyve yapısına sahip, uzun süre taze kalan mükemmel bir çeşittir.</p></div>
+        <div class="variety-card"><h3>🫐 Bluecrop</h3><p>Dünyanın en popüler, hastalıklara dayanıklı ve verimli mavi yemişidir.</p></div>
+    </div>
+
+    <div class="stats">
+        <h3>1 Bardak (145g) Mavi Yemiş Değerleri</h3>
+        <div class="stats-grid">
+            <div class="stat-item"><b>85</b> Kalori</div>
+            <div class="stat-item"><b>21g</b> Karb.</div>
+            <div class="stat-item"><b>1g</b> Protein</div>
+            <div class="stat-item"><b>19mg</b> C-Vit</div>
+            <div class="stat-item"><b>1.5g</b> Lif</div>
         </div>
     </div>
 
-    <h2>Mavi Yemişin İçindekiler (145g)</h2>
-    <div class="stats">
-        <div class="stats-grid">
-            <div><strong>85</strong><br>Kalori</div>
-            <div><strong>21g</strong><br>Karbonhidrat</div>
-            <div><strong>1g</strong><br>Protein</div>
-            <div><strong>19mg</strong><br>C-Vitamini</div>
-            <div><strong>145 IU</strong><br>A-Vitamini</div>
-        </div>
-    </div>
+    <a href="https://wa.me/905313273886" class="btn-whatsapp">
+        <span>💬</span> WhatsApp'tan Sipariş Ver
+    </a>
 </div>
 
 <footer>
-    <h3>Bursa Mavisi</h3>
-    <div class="contact-info">
+    <div class="contact-box">
+        <h3>İletişim Bilgileri</h3>
         <p>📍 Bursa / Orhaneli & Bursa / Gürsu</p>
-        <p>📧 erolayhan49@hotmail.com</p>
-        <p>📞 +90 531 327 38 86</p>
-        <p>⏰ Hafta içi her gün: 08:00 - 22:00</p>
+        <p>📞 +90 531 327 38 86 | 📧 erolayhan49@hotmail.com</p>
+        <p>⏰ Haftanın Her Günü: 08:00 - 22:00</p>
     </div>
-    <p style="margin-top:30px; font-size:0.8rem; opacity:0.6;">&copy; 2026 Bursa Mavisi. Tüm Hakları Saklıdır.</p>
+    <p>&copy; 2026 Bursa Mavisi. Tüm Hakları Saklıdır.</p>
 </footer>
 
 </body>
